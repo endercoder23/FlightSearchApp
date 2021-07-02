@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="FilterWithRadioButtonsCollectionViewCell" customModule="FlightSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="111" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="111" height="44"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dV3-Gy-RYg">
+                        <rect key="frame" x="5" y="5" width="101" height="34"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-aQ-0KI">
+                                <rect key="frame" x="34" y="5" width="62" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqX-2W-XO6">
+                                <rect key="frame" x="5" y="5" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="C1n-bY-NgR"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="unchecked_checkbox"/>
+                                <state key="selected" image="checked_checkbox"/>
+                                <connections>
+                                    <action selector="radioButtonSelected:" destination="gTV-IL-0wX" eventType="touchUpInside" id="U7H-d4-9Hs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cqX-2W-XO6" secondAttribute="bottom" constant="5" id="2qP-z9-ycp"/>
+                            <constraint firstAttribute="trailing" secondItem="EpM-aQ-0KI" secondAttribute="trailing" constant="5" id="72U-Tf-sAc"/>
+                            <constraint firstAttribute="bottom" secondItem="EpM-aQ-0KI" secondAttribute="bottom" constant="5" id="Yte-gD-TpJ"/>
+                            <constraint firstItem="cqX-2W-XO6" firstAttribute="leading" secondItem="dV3-Gy-RYg" secondAttribute="leading" constant="5" id="efh-mI-t4P"/>
+                            <constraint firstItem="EpM-aQ-0KI" firstAttribute="leading" secondItem="cqX-2W-XO6" secondAttribute="trailing" constant="5" id="faN-wg-I6l"/>
+                            <constraint firstItem="EpM-aQ-0KI" firstAttribute="top" secondItem="dV3-Gy-RYg" secondAttribute="top" constant="5" id="vmV-nR-pUd"/>
+                            <constraint firstItem="cqX-2W-XO6" firstAttribute="top" secondItem="dV3-Gy-RYg" secondAttribute="top" constant="5" id="wjG-8U-dBX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dV3-Gy-RYg" secondAttribute="bottom" constant="5" id="c2r-nW-7gl"/>
+                <constraint firstItem="dV3-Gy-RYg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="dEz-GX-8oY"/>
+                <constraint firstAttribute="trailing" secondItem="dV3-Gy-RYg" secondAttribute="trailing" constant="5" id="lXX-rw-QfQ"/>
+                <constraint firstItem="dV3-Gy-RYg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="wxw-0x-BPD"/>
+            </constraints>
+            <size key="customSize" width="111" height="44"/>
+            <connections>
+                <outlet property="flightCountry" destination="EpM-aQ-0KI" id="2kY-1Z-tPC"/>
+                <outlet property="radioButton" destination="cqX-2W-XO6" id="NwP-Cv-iTP"/>
+            </connections>
+            <point key="canvasLocation" x="52.898550724637687" y="61.607142857142854"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="checked_checkbox" width="30" height="30"/>
+        <image name="unchecked_checkbox" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
