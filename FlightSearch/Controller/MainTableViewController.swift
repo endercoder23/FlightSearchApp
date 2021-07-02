@@ -1,214 +1,168 @@
-//
-//  MainTableViewController.swift
-//  FlightSearch
-//
-//  Created by Mind on 07/05/21.
-//
 
 import UIKit
-
+import RangeSeekSlider
+import Alamofire
 
 class MainTableViewController: UITableViewController {
     
-    let cellReuseIdentifier = "FlightTableViewCell"
+    //MARK: - Declared Variables
+    @IBOutlet weak var filterButton: UIBarButtonItem!
+    private let cellReuseIdentifier = "FlightTableViewCell"
+    var filteredViewModel = [MainTableViewModel]()
+    var filteredviewModelObject: MainTableViewModel?
+    private var filData: Bool = false
+    var dataIndex: Int = 0
     let urLJSON = "https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json"
-    var flightData = [FlightData]()
-    var nextVCFlightData = [FlightData]()
-    var filteredData = [FlightData]()
-    var searchButtonController = UISearchController(searchResultsController: nil)
-    var searching = false
-    var dataIndex : Int?
-
+    var boolForCountry: Bool = false
+    var fetchData = FetchData()
+    var location = LocationManager()
+    lazy var searchController : UISearchController = {
+        var searchController = UISearchController(searchResultsController: nil)
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "Search City", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.go
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        self.definesPresentationContext = true
+        return searchController
+    }()
     
-
-  
+    // MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.backgroundColor = .red
-        self.navigationItem.searchController = searchButtonController
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .lightGray
         configTableView()
-        fetchFlightData()
-        configureSearchController()
-        
-        
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        filData = false
+        self.navigationItem.searchController = searchController
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loadData(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
     }
     
-    func configureSearchController(){
-        searchButtonController.loadViewIfNeeded()
-        searchButtonController.searchResultsUpdater = self
-        searchButtonController.searchBar.delegate = self
-        searchButtonController.obscuresBackgroundDuringPresentation = false
-        searchButtonController.searchBar.enablesReturnKeyAutomatically = false
-        searchButtonController.searchBar.returnKeyType = UIReturnKeyType.go
-        self.navigationItem.searchController = searchButtonController
-        self.navigationItem.hidesSearchBarWhenScrolling = false
-        definesPresentationContext = true
-        searchButtonController.searchBar.placeholder = "Search City"
-        
-        
-    }
-    
-    func fetchFlightData() {
-
-        let userUrl = "\(urLJSON)"
-        print(userUrl)
-        if let url = URL(string: userUrl) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
-
-                guard error == nil, let safeData = data else {
-                    print(error?.localizedDescription ?? "")
-                    return
-                }
-                let jsonDecoded = try? JSONDecoder().decode([FlightData].self, from: safeData)
-//
-                self.flightData.append(contentsOf: jsonDecoded!)
-//                print(self.flightData)
-//
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+    override func viewDidAppear(_ animated: Bool)   {
+        fetchData.fetchFlightData( completion: { (success) -> Void in
+            if success{
+                self.filterAndReload()
             }
-            task.resume()
-        }
+        })
     }
+    //MARK:- Helper Methods
+    
+    @IBAction func filterButtonPressed(_ sender: UIBarButtonItem){
+        showFilterVC()
+    }
+    
+    private func showFilterVC(){
+        let flightViewModelData = fetchData.flightViewModel
+        let slideVC = FilterScreenView()
+        slideVC.numberOfCountries = flightViewModelData
+        slideVC.modalPresentationStyle = .custom
+        slideVC.transitioningDelegate = self
+        self.present(slideVC, animated: true, completion: nil)
+    }
+    
     private func configTableView() {
-   
-        self.tableView.register(UINib(nibName: "FlightTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        self.tableView.register(UINib(nibName: cellReuseIdentifier, bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+    }
+    
+    @objc func loadData(notification: NSNotification){
+        self.filteredViewModel = fetchData.searchFlights(searchText: searchController.searchBar.text!, value: true)
+        print(self.filteredViewModel.count)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
+    }
+    
+    func filterAndReload() {
+        self.filteredViewModel = getFilteredRecord()
+        tableView.reloadData()
+    }
+    
+    private func getFilteredRecord() -> [MainTableViewModel] {
+        return fetchData.searchFlights( searchText: searchController.searchBar.text!, value: false)
+    }
+}
 
-    // MARK: - Table view data source
+// MARK: - TableView Delegate & DataSource
+extension MainTableViewController{
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                
-        dataIndex = indexPath.section
-        performSegue(withIdentifier: "PassToAirportDetail", sender: self)
-
-    }
-    
-    func searchingData() -> Array<FlightData> {
-        let indexPathData = filteredData[dataIndex!].city!
-        if searching{
-        for cityName in filteredData{
-         
-            if ((cityName.city!.lowercased().contains(indexPathData.lowercased()))){
-                nextVCFlightData.append(cityName)
-                print("yee\(nextVCFlightData)")
-            }
-        }
-            return nextVCFlightData
-        }
-        else{
-            let dataFlight = flightData[dataIndex!].city!
-            for cityName in flightData{
-             
-                if ((cityName.city!.lowercased().contains(dataFlight.lowercased()))){
-                    nextVCFlightData.append(cityName)
-                    print("yee\(nextVCFlightData)")
-                    
-                }
-            }
-            return nextVCFlightData
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PassToAirportDetail"{
-            let secondTVC = segue.destination as! AirportTableViewController
-            secondTVC.secondAirtportData = searchingData()
-            
-        }
-    }
-    
-    
-    
-   
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        if searching{
-            return filteredData.count
-        }
-        else{
-        return flightData.count
-        }
-    }
-    
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        return 1
+        return filteredViewModel.count
     }
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 10
-        }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! FlightTableViewCell
-        if searching{
-            if let stateName = self.filteredData[indexPath.section].state,
-               let countryName = self.filteredData[indexPath.section].country{
-             cell.cityLabel.text = self.filteredData[indexPath.section].city
-             cell.stateCountryLabel.text = "\(stateName) \(countryName)"
-             print("orewa")
-           
-            }
-            print("hello")
-            
-            
-            
-        }else{
-           if let stateName = self.flightData[indexPath.section].state,
-              let countryName = self.flightData[indexPath.section].country{
-            cell.cityLabel.text = self.flightData[indexPath.section].city
-            cell.stateCountryLabel.text = "\(stateName) \(countryName)"
-            print("orewa")
-          
-           }
-            
-        }
+        cell.mainTableViewModel = filteredViewModel[indexPath.row]
         return cell
-       
-    }
-
-}
-
-extension MainTableViewController: UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating{
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchText = searchButtonController.searchBar.text!
-        if !searchText.isEmpty{
-//            print("yeet")
-            
-            searching = true
-            filteredData.removeAll()
-            for cityName in flightData{
-             
-                if ((cityName.city!.lowercased().contains(searchText.lowercased()))){
-                    filteredData.append(cityName)
-                    print("uWu\(cityName)")
-                }
-            }
-      
-        }else{
-            print("noice")
-            searching=false
-            filteredData.removeAll()
-            filteredData = flightData
-            
-        }
-        
-        tableView.reloadData()
- 
-    }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("ahaa")
-        searching = false
-        filteredData.removeAll()
-        tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dataIndex = indexPath.row
+        filData = true
+        let AirportVC = storyboard?.instantiateViewController(withIdentifier: "AirportTableViewController") as! AirportTableViewController
+        AirportVC.secondAirtportData = getFilteredRecord()
+        self.navigationController?.pushViewController(AirportVC, animated: true)
+    }
 }
+
+// MARK: - UISearchControllerDelegate, UISearchBarDelegate
+extension MainTableViewController: UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filData = false
+        self.filterAndReload()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.filterAndReload()
+    }
+}
+
+//MARK: - Half View Transition Delegate
+extension MainTableViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        FIlterViewController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+
+//MARK: - Important comment
+
+
+/*func fetchData(){
+ 
+ 
+ .responseJSON { (response) in
+ switch response.result {
+ case .success(let value):
+ if let JSON = value as? [String: Any] {
+ let status = JSON["status"] as! String
+ print(status)
+ }
+ case .failure(let error): break
+ // error handling
+ }
+ }
+ let userUrl = "\(urLJSON)"
+ print(userUrl)
+ if let url = URL(string: userUrl) {
+ let session = URLSession(configuration: .default)
+ let task = session.dataTask(with: url) { (data, response, error) in
+ 
+ guard error == nil, let safeData = data else {
+ print(error?.localizedDescription ?? "")
+ return
+ }
+ let jsonDecoded = try? JSONDecoder().decode([FlightData].self, from: safeData)
+ self.flightData.append(contentsOf: jsonDecoded!)
+ DispatchQueue.main.async {
+ self.tableView.reloadData()
+ }
+ }
+ task.resume()
+ }
+ 
+ 
+ }*/

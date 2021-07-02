@@ -3,19 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FFCADEE5339B5999D5FF813 /* Pods_FlightSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A45267A5F31D921AF2E5CD8 /* Pods_FlightSearch.framework */; };
+		B82508F2265E63CE0069142C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82508F1265E63CE0069142C /* MapViewModel.swift */; };
+		B8352F912672460A00F3797B /* FIlterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8352F8F2672460A00F3797B /* FIlterViewController.swift */; };
+		B8352F9A26724E2200F3797B /* FilterScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8352F9926724E2200F3797B /* FilterScreenView.xib */; };
+		B8352F9F267251A700F3797B /* FilterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8352F9E267251A700F3797B /* FilterScreenView.swift */; };
+		B83DE0C2264B928000A8BBE6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83DE0C1264B928000A8BBE6 /* MapViewController.swift */; };
+		B8961F482645066800E5437B /* FlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8961F472645066800E5437B /* FlightData.swift */; };
+		B8961F4E2645068600E5437B /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8961F4C2645068600E5437B /* FlightTableViewCell.swift */; };
+		B8961F4F2645068600E5437B /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8961F4D2645068600E5437B /* FlightTableViewCell.xib */; };
+		B8961F5426451DC200E5437B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8961F5326451DC200E5437B /* MainTableViewController.swift */; };
+		B8961F5926451DF500E5437B /* AirportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8961F5826451DF500E5437B /* AirportTableViewController.swift */; };
+		B8961F6C26456EAB00E5437B /* DetailedFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8961F6A26456EAB00E5437B /* DetailedFlightTableViewCell.swift */; };
+		B8961F6D26456EAB00E5437B /* DetailedFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8961F6B26456EAB00E5437B /* DetailedFlightTableViewCell.xib */; };
 		B8B16A5B26441F8C00B2523F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B16A5A26441F8C00B2523F /* AppDelegate.swift */; };
 		B8B16A5D26441F8C00B2523F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B16A5C26441F8C00B2523F /* SceneDelegate.swift */; };
-		B8B16A5F26441F8C00B2523F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B16A5E26441F8C00B2523F /* ViewController.swift */; };
 		B8B16A6226441F8C00B2523F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B16A6026441F8C00B2523F /* Main.storyboard */; };
 		B8B16A6526441F8C00B2523F /* FlightSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8B16A6326441F8C00B2523F /* FlightSearch.xcdatamodeld */; };
 		B8B16A6726441F9000B2523F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8B16A6626441F9000B2523F /* Assets.xcassets */; };
 		B8B16A6A26441F9000B2523F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B16A6826441F9000B2523F /* LaunchScreen.storyboard */; };
-		B8B16A7526441F9100B2523F /* FlightSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B16A7426441F9100B2523F /* FlightSearchTests.swift */; };
-		B8B16A8026441F9100B2523F /* FlightSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B16A7F26441F9100B2523F /* FlightSearchUITests.swift */; };
+		B8B16A922644297A00B2523F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B8B16A912644297A00B2523F /* Alamofire */; };
+		B8C55016265CE5F900EBF6FC /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C55015265CE5F900EBF6FC /* MainTableViewModel.swift */; };
+		B8C55025265D102100EBF6FC /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C55024265D102100EBF6FC /* extensions.swift */; };
+		B8E15B01267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E15AFF267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.swift */; };
+		B8E15B02267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E15B00267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.xib */; };
+		D5D1E117AC7AF6EF8D1A61F2 /* Pods_FlightSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3102B07DDEF8DEBA0F896B6E /* Pods_FlightSearchTests.framework */; };
+		F83D04B6B39BABC4D199F79A /* Pods_FlightSearch_FlightSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A4B3B9ACDD3B28B2F4372B /* Pods_FlightSearch_FlightSearchUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,21 +53,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A45267A5F31D921AF2E5CD8 /* Pods_FlightSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3102B07DDEF8DEBA0F896B6E /* Pods_FlightSearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightSearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33AE2AB2B7DE3DEF12FE6820 /* Pods-FlightSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightSearch.debug.xcconfig"; path = "Target Support Files/Pods-FlightSearch/Pods-FlightSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		43421FB46BC3A6AD2127B1F3 /* Pods-FlightSearch-FlightSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightSearch-FlightSearchUITests.release.xcconfig"; path = "Target Support Files/Pods-FlightSearch-FlightSearchUITests/Pods-FlightSearch-FlightSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		46C8587E461DF196350F20D2 /* Pods-FlightSearch-FlightSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightSearch-FlightSearchUITests.debug.xcconfig"; path = "Target Support Files/Pods-FlightSearch-FlightSearchUITests/Pods-FlightSearch-FlightSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8950B6D942ABB8D0D1B0F1C5 /* Pods-FlightSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightSearch.release.xcconfig"; path = "Target Support Files/Pods-FlightSearch/Pods-FlightSearch.release.xcconfig"; sourceTree = "<group>"; };
+		918550B7C3C363B3E0AD41D1 /* Pods-FlightSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightSearchTests.debug.xcconfig"; path = "Target Support Files/Pods-FlightSearchTests/Pods-FlightSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B82508F1265E63CE0069142C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		B8352F8F2672460A00F3797B /* FIlterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlterViewController.swift; sourceTree = "<group>"; };
+		B8352F9926724E2200F3797B /* FilterScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterScreenView.xib; sourceTree = "<group>"; };
+		B8352F9E267251A700F3797B /* FilterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScreenView.swift; sourceTree = "<group>"; };
+		B83DE0C1264B928000A8BBE6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B8961F472645066800E5437B /* FlightData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightData.swift; sourceTree = "<group>"; };
+		B8961F4C2645068600E5437B /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
+		B8961F4D2645068600E5437B /* FlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
+		B8961F5326451DC200E5437B /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		B8961F5826451DF500E5437B /* AirportTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportTableViewController.swift; sourceTree = "<group>"; };
+		B8961F6A26456EAB00E5437B /* DetailedFlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFlightTableViewCell.swift; sourceTree = "<group>"; };
+		B8961F6B26456EAB00E5437B /* DetailedFlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedFlightTableViewCell.xib; sourceTree = "<group>"; };
 		B8B16A5726441F8C00B2523F /* FlightSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B16A5A26441F8C00B2523F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B16A5C26441F8C00B2523F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8B16A5E26441F8C00B2523F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8B16A6126441F8C00B2523F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8B16A6426441F8C00B2523F /* FlightSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlightSearch.xcdatamodel; sourceTree = "<group>"; };
 		B8B16A6626441F9000B2523F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8B16A6926441F9000B2523F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8B16A6B26441F9000B2523F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8B16A7026441F9100B2523F /* FlightSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8B16A7426441F9100B2523F /* FlightSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchTests.swift; sourceTree = "<group>"; };
-		B8B16A7626441F9100B2523F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8B16A7B26441F9100B2523F /* FlightSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8B16A7F26441F9100B2523F /* FlightSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchUITests.swift; sourceTree = "<group>"; };
-		B8B16A8126441F9100B2523F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8C55015265CE5F900EBF6FC /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
+		B8C55024265D102100EBF6FC /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		B8E15AFF267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWithRadioButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
+		B8E15B00267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterWithRadioButtonsCollectionViewCell.xib; sourceTree = "<group>"; };
+		D5A4B3B9ACDD3B28B2F4372B /* Pods_FlightSearch_FlightSearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightSearch_FlightSearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F89C4EFC306D4B41C852D1F1 /* Pods-FlightSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightSearchTests.release.xcconfig"; path = "Target Support Files/Pods-FlightSearchTests/Pods-FlightSearchTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B16A922644297A00B2523F /* Alamofire in Frameworks */,
+				6FFCADEE5339B5999D5FF813 /* Pods_FlightSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D1E117AC7AF6EF8D1A61F2 /* Pods_FlightSearchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,19 +112,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83D04B6B39BABC4D199F79A /* Pods_FlightSearch_FlightSearchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A26574BD202DB13E24F60D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33AE2AB2B7DE3DEF12FE6820 /* Pods-FlightSearch.debug.xcconfig */,
+				8950B6D942ABB8D0D1B0F1C5 /* Pods-FlightSearch.release.xcconfig */,
+				46C8587E461DF196350F20D2 /* Pods-FlightSearch-FlightSearchUITests.debug.xcconfig */,
+				43421FB46BC3A6AD2127B1F3 /* Pods-FlightSearch-FlightSearchUITests.release.xcconfig */,
+				918550B7C3C363B3E0AD41D1 /* Pods-FlightSearchTests.debug.xcconfig */,
+				F89C4EFC306D4B41C852D1F1 /* Pods-FlightSearchTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B8AC66642661102F00484E8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8B16A5A26441F8C00B2523F /* AppDelegate.swift */,
+				B8B16A5C26441F8C00B2523F /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B8B16A4E26441F8C00B2523F = {
 			isa = PBXGroup;
 			children = (
 				B8B16A5926441F8C00B2523F /* FlightSearch */,
-				B8B16A7326441F9100B2523F /* FlightSearchTests */,
-				B8B16A7E26441F9100B2523F /* FlightSearchUITests */,
 				B8B16A5826441F8C00B2523F /* Products */,
+				6A26574BD202DB13E24F60D6 /* Pods */,
+				EF979996D16E644B3620A56D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +164,11 @@
 		B8B16A5926441F8C00B2523F /* FlightSearch */ = {
 			isa = PBXGroup;
 			children = (
-				B8B16A5A26441F8C00B2523F /* AppDelegate.swift */,
-				B8B16A5C26441F8C00B2523F /* SceneDelegate.swift */,
-				B8B16A5E26441F8C00B2523F /* ViewController.swift */,
-				B8B16A6026441F8C00B2523F /* Main.storyboard */,
+				B8AC66642661102F00484E8D /* Resources */,
+				B8C55029265D220A00EBF6FC /* VIewModel */,
+				B8B6DD8A2648301B00E5C0CB /* Controller */,
+				B8B6DD8B2648303700E5C0CB /* Model */,
+				B8B6DD932648307D00E5C0CB /* View */,
 				B8B16A6626441F9000B2523F /* Assets.xcassets */,
 				B8B16A6826441F9000B2523F /* LaunchScreen.storyboard */,
 				B8B16A6B26441F9000B2523F /* Info.plist */,
@@ -113,22 +177,67 @@
 			path = FlightSearch;
 			sourceTree = "<group>";
 		};
-		B8B16A7326441F9100B2523F /* FlightSearchTests */ = {
+		B8B6DD8A2648301B00E5C0CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B8B16A7426441F9100B2523F /* FlightSearchTests.swift */,
-				B8B16A7626441F9100B2523F /* Info.plist */,
+				B8961F5326451DC200E5437B /* MainTableViewController.swift */,
+				B8961F5826451DF500E5437B /* AirportTableViewController.swift */,
+				B83DE0C1264B928000A8BBE6 /* MapViewController.swift */,
+				B8352F9E267251A700F3797B /* FilterScreenView.swift */,
+				B8C55024265D102100EBF6FC /* extensions.swift */,
 			);
-			path = FlightSearchTests;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		B8B16A7E26441F9100B2523F /* FlightSearchUITests */ = {
+		B8B6DD8B2648303700E5C0CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B8B16A7F26441F9100B2523F /* FlightSearchUITests.swift */,
-				B8B16A8126441F9100B2523F /* Info.plist */,
+				B8961F4C2645068600E5437B /* FlightTableViewCell.swift */,
+				B8961F6A26456EAB00E5437B /* DetailedFlightTableViewCell.swift */,
+				B8E15AFF267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.swift */,
+				B8B6DD922648304800E5C0CB /* FlightStruct */,
 			);
-			path = FlightSearchUITests;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8B6DD922648304800E5C0CB /* FlightStruct */ = {
+			isa = PBXGroup;
+			children = (
+				B8961F472645066800E5437B /* FlightData.swift */,
+			);
+			path = FlightStruct;
+			sourceTree = "<group>";
+		};
+		B8B6DD932648307D00E5C0CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8352F9926724E2200F3797B /* FilterScreenView.xib */,
+				B8961F4D2645068600E5437B /* FlightTableViewCell.xib */,
+				B8E15B00267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.xib */,
+				B8961F6B26456EAB00E5437B /* DetailedFlightTableViewCell.xib */,
+				B8B16A6026441F8C00B2523F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8C55029265D220A00EBF6FC /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8C55015265CE5F900EBF6FC /* MainTableViewModel.swift */,
+				B82508F1265E63CE0069142C /* MapViewModel.swift */,
+				B8352F8F2672460A00F3797B /* FIlterViewController.swift */,
+			);
+			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		EF979996D16E644B3620A56D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A45267A5F31D921AF2E5CD8 /* Pods_FlightSearch.framework */,
+				D5A4B3B9ACDD3B28B2F4372B /* Pods_FlightSearch_FlightSearchUITests.framework */,
+				3102B07DDEF8DEBA0F896B6E /* Pods_FlightSearchTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,15 +247,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8B16A8426441F9100B2523F /* Build configuration list for PBXNativeTarget "FlightSearch" */;
 			buildPhases = (
+				5351818FBBCBD67525B6D663 /* [CP] Check Pods Manifest.lock */,
 				B8B16A5326441F8C00B2523F /* Sources */,
 				B8B16A5426441F8C00B2523F /* Frameworks */,
 				B8B16A5526441F8C00B2523F /* Resources */,
+				18861544F5390F340341F050 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FlightSearch;
+			packageProductDependencies = (
+				B8B16A912644297A00B2523F /* Alamofire */,
+			);
 			productName = FlightSearch;
 			productReference = B8B16A5726441F8C00B2523F /* FlightSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8B16A8726441F9100B2523F /* Build configuration list for PBXNativeTarget "FlightSearchTests" */;
 			buildPhases = (
+				3EB666FC334AED0C4F69AFCB /* [CP] Check Pods Manifest.lock */,
 				B8B16A6C26441F9100B2523F /* Sources */,
 				B8B16A6D26441F9100B2523F /* Frameworks */,
 				B8B16A6E26441F9100B2523F /* Resources */,
@@ -173,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8B16A8A26441F9100B2523F /* Build configuration list for PBXNativeTarget "FlightSearchUITests" */;
 			buildPhases = (
+				62C2DE7FF6C881A4C2B8F77C /* [CP] Check Pods Manifest.lock */,
 				B8B16A7726441F9100B2523F /* Sources */,
 				B8B16A7826441F9100B2523F /* Frameworks */,
 				B8B16A7926441F9100B2523F /* Resources */,
+				E8BAC68CD1F0358B410A118D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +335,9 @@
 				Base,
 			);
 			mainGroup = B8B16A4E26441F8C00B2523F;
+			packageReferences = (
+				B8B16A902644297A00B2523F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = B8B16A5826441F8C00B2523F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,8 +355,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8B16A6A26441F9000B2523F /* LaunchScreen.storyboard in Resources */,
+				B8E15B02267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.xib in Resources */,
+				B8961F4F2645068600E5437B /* FlightTableViewCell.xib in Resources */,
+				B8352F9A26724E2200F3797B /* FilterScreenView.xib in Resources */,
 				B8B16A6726441F9000B2523F /* Assets.xcassets in Resources */,
 				B8B16A6226441F8C00B2523F /* Main.storyboard in Resources */,
+				B8961F6D26456EAB00E5437B /* DetailedFlightTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +380,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18861544F5390F340341F050 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlightSearch/Pods-FlightSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlightSearch/Pods-FlightSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlightSearch/Pods-FlightSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EB666FC334AED0C4F69AFCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlightSearchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5351818FBBCBD67525B6D663 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlightSearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62C2DE7FF6C881A4C2B8F77C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlightSearch-FlightSearchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8BAC68CD1F0358B410A118D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlightSearch-FlightSearchUITests/Pods-FlightSearch-FlightSearchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlightSearch-FlightSearchUITests/Pods-FlightSearch-FlightSearchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlightSearch-FlightSearchUITests/Pods-FlightSearch-FlightSearchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B8B16A5326441F8C00B2523F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B16A5F26441F8C00B2523F /* ViewController.swift in Sources */,
+				B8961F4E2645068600E5437B /* FlightTableViewCell.swift in Sources */,
+				B8961F482645066800E5437B /* FlightData.swift in Sources */,
+				B8352F912672460A00F3797B /* FIlterViewController.swift in Sources */,
+				B8E15B01267374F40085032E /* FilterWithRadioButtonsCollectionViewCell.swift in Sources */,
 				B8B16A6526441F8C00B2523F /* FlightSearch.xcdatamodeld in Sources */,
+				B8961F6C26456EAB00E5437B /* DetailedFlightTableViewCell.swift in Sources */,
+				B8C55016265CE5F900EBF6FC /* MainTableViewModel.swift in Sources */,
+				B83DE0C2264B928000A8BBE6 /* MapViewController.swift in Sources */,
 				B8B16A5B26441F8C00B2523F /* AppDelegate.swift in Sources */,
 				B8B16A5D26441F8C00B2523F /* SceneDelegate.swift in Sources */,
+				B8961F5926451DF500E5437B /* AirportTableViewController.swift in Sources */,
+				B8352F9F267251A700F3797B /* FilterScreenView.swift in Sources */,
+				B8961F5426451DC200E5437B /* MainTableViewController.swift in Sources */,
+				B8C55025265D102100EBF6FC /* extensions.swift in Sources */,
+				B82508F2265E63CE0069142C /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +510,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B16A7526441F9100B2523F /* FlightSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +517,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B16A8026441F9100B2523F /* FlightSearchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +673,7 @@
 		};
 		B8B16A8526441F9100B2523F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33AE2AB2B7DE3DEF12FE6820 /* Pods-FlightSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -455,6 +692,7 @@
 		};
 		B8B16A8626441F9100B2523F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8950B6D942ABB8D0D1B0F1C5 /* Pods-FlightSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +711,7 @@
 		};
 		B8B16A8826441F9100B2523F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 918550B7C3C363B3E0AD41D1 /* Pods-FlightSearchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +733,7 @@
 		};
 		B8B16A8926441F9100B2523F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F89C4EFC306D4B41C852D1F1 /* Pods-FlightSearchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +755,7 @@
 		};
 		B8B16A8B26441F9100B2523F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C8587E461DF196350F20D2 /* Pods-FlightSearch-FlightSearchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +775,7 @@
 		};
 		B8B16A8C26441F9100B2523F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43421FB46BC3A6AD2127B1F3 /* Pods-FlightSearch-FlightSearchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -591,6 +833,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8B16A902644297A00B2523F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8B16A912644297A00B2523F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8B16A902644297A00B2523F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B8B16A6326441F8C00B2523F /* FlightSearch.xcdatamodeld */ = {
